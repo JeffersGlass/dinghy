@@ -124,6 +124,25 @@
     font-style: italic;
     margin-top: 3em;
   }
+  .collapse-control{
+    cursor: pointer;
+    width: auto; 
+  }
+  .collapse-control-text{
+    background-color: #eee;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    border: 1px solid #eee;
+    border-radius: 10px;
+  }
+  .collapsible-content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #fff;
+    border: 2px solid #eee;
+    border-radius: 2px;
+  }
   .octicons {
     display: inline-block;
     padding-right: .3em;
@@ -194,7 +213,7 @@
     {{ octicon_bg("package", color="green") }}
   }
   </style>
-</head>
+  </head>
 <body>
 
 <h1>{{ page_title() }}</h1>
@@ -271,7 +290,8 @@
               {%- if entry.description %}<p>{{ entry.description|trim|truncate(120) }}</p>{% endif -%}
 
               {% if entry.children -%}
-                <ul class="comments">
+                <p class="collapse-control"><span class="collapse-control-text">Show Children</span></p>
+                <ul class="comments collapsible-content">
                   {% for child in entry.children recursive -%}
                     <li{% if child.boring %} class="boring"{% endif %}>
                       <p><a href="{{ child.url }}" title="{{ child.updatedAt|datetime() }}">
@@ -316,5 +336,20 @@
     {# keep the dinghy_version span on a line by itself for `make check_release` -#}
     <span class="dinghy_version">{{ __version__ }}</span></a>.
 </p>
+<script>
+  var controls = document.getElementsByClassName("collapse-control");
+  var i;
+
+  for (i = 0; i < controls.length; i++) {
+    controls[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  } 
+</script>
 </body>
-</html>

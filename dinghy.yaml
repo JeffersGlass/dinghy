@@ -1,0 +1,13 @@
+digests:
+  - digest: all-chorological-pyscript.html
+    title: PyScript Updates
+    since: 1d
+    items: 
+      - https://github.com/pyscript/pyscript
+
+  - digest: by-category-pyscript.html
+    template: digest2.html.j2
+    title: PyScript Updates
+    since: 10d
+    items: 
+      - https://github.com/pyscript/pyscript

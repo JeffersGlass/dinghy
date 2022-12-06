@@ -1,0 +1,1691 @@
+<!DOCTYPE html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+  
+  Activity since 2022-11-03</title>
+  <link rel="icon" href="https://raw.githubusercontent.com/primer/octicons/main/icons/comment-discussion-24.svg" type="image/svg+xml">
+  <style>
+  body {
+    font-family: sans-serif;
+    max-width: 60em;
+    margin: auto;
+    line-height: 1.3;
+    color: black;
+  }
+  ul {
+    padding-left: 0;
+    list-style-type: none;
+  }
+  li {
+    margin: 0;
+  }
+  li p {
+    margin: 0;
+  }
+  ul.repos > li {
+    margin-top: 2em;
+  }
+  ul.entries > li {
+    margin-top: 1em;
+  }
+  ul.entries > li > p {
+    margin-left: 4.2em;
+  }
+  ul.entries > li > p:first-child {
+    text-indent: -2.1em;   /* not sure why it's half the 4.2em indent */
+  }
+  ul.comments > li > p {
+    margin-left: 4.2em;
+    padding-left: 1.6em;
+    text-indent: -1.6em;
+  }
+  ul.thread_comment ul.thread_comment {
+    padding-left: 1.6em;
+  }
+  ul.thread_comment > li > p {
+    padding-left: 7.3em;
+    text-indent: -1.6em;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  a:hover {
+    text-decoration: none;
+    color: #0969da;
+  }
+  .footer a:hover {
+    text-decoration: underline;
+  }
+  .reponame {
+    font-weight: bold;
+    font-size: 150%;
+    margin-right: .5em;
+  }
+  .label {
+    padding: .2em .5em .1em .5em;
+    border-radius: 2em;
+    font-size: 75%;
+    opacity: .85;
+    vertical-align: middle;
+    white-space: nowrap;
+    /* GitHub label style computations, lifted from github.com */
+    border: 1px solid transparent;
+    --perceived-lightness: calc( ((var(--label-r) * 0.2126) + (var(--label-g) * 0.7152) + (var(--label-b) * 0.0722)) / 255 );
+    --lightness-switch: max(0, min(calc((var(--perceived-lightness) - var(--lightness-threshold)) * -1000), 1));
+    --lightness-threshold: 0.453;
+    --border-threshold: 0.96;
+    --border-alpha: max(0, min(calc((var(--perceived-lightness) - var(--border-threshold)) * 100), 1));
+    background: rgb(var(--label-r), var(--label-g), var(--label-b));
+    color: hsl(0, 0%, calc(var(--lightness-switch) * 100%));
+    border-color: hsla(var(--label-h), calc(var(--label-s) * 1%), calc((var(--label-l) - 25) * 1%), var(--border-alpha));
+  }
+  .homerepo {
+    color: #888;
+  }
+  .boring > p {
+    color: #888;
+  }
+  .footer {
+    color: #888;
+    font-style: italic;
+    margin-top: 3em;
+  }
+  .collapse-control{
+    cursor: pointer;
+    width: auto; 
+  }
+  .collapse-control-text{
+    background-color: #eee;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    border: 1px solid #eee;
+    border-radius: 10px;
+  }
+  .collapsible-content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #fff;
+    border: 2px solid #eee;
+    border-radius: 2px;
+  }
+  .octicons {
+    display: inline-block;
+    padding-right: .3em;
+  }
+  .octicon {
+    width: 1.3em;
+    height: 1em;
+    display: inline-block;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    padding-bottom: .2em;
+  }
+  .octicon.star {
+    background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/star-16.svg);
+  filter: invert(1) brightness(.5) sepia(1) hue-rotate(98deg) saturate(8) brightness(0.5);
+  
+  }
+  .octicon.x {
+    background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/x-16.svg);
+  
+  }
+  .octicon.check {
+    background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/check-16.svg);
+  
+  }
+  .octicon.checkcircle {
+    background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/check-circle-16.svg);
+  filter: invert(1) brightness(.5) sepia(1) hue-rotate(98deg) saturate(8) brightness(0.5);
+  
+  }
+  .octicon.comment.resolved {
+    background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/tasklist-16.svg);
+  filter: invert(1) brightness(.5) sepia(1) hue-rotate(98deg) saturate(8) brightness(0.5);
+  
+  }
+  .octicon.comment {
+    background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/comment-16.svg);
+  
+  }
+  .octicon.eye {
+    background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/eye-16.svg);
+  
+  }
+  .octicon.filediff {
+    background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/file-diff-16.svg);
+  filter: invert(1) brightness(.5) sepia(1) hue-rotate(316deg) saturate(6) brightness(.8);
+  
+  }
+  .octicon.dash {
+    background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/dash-16.svg);
+  filter: invert(1) brightness(.5) sepia(1) hue-rotate(172deg) saturate(0.43) brightness(1.25);
+  
+  }
+  .octicon.pull {
+    background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/git-pull-request-16.svg);
+  filter: invert(1) brightness(.5) sepia(1) hue-rotate(98deg) saturate(8) brightness(0.5);
+  
+  }
+  .octicon.pull.draft {
+    background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/git-pull-request-draft-16.svg);
+  filter: invert(1) brightness(.5) sepia(1) hue-rotate(172deg) saturate(0.43) brightness(0.65);
+  
+  }
+  .octicon.pull.closed {
+    background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/git-pull-request-closed-16.svg);
+  filter: invert(1) brightness(.5) sepia(1) hue-rotate(316deg) saturate(6) brightness(.8);
+  
+  }
+  .octicon.pull.merged {
+    background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/git-merge-16.svg);
+  filter: invert(1) brightness(.5) sepia(1) hue-rotate(220deg) saturate(8) brightness(.65);
+  
+  }
+  .octicon.issue {
+    background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/issue-opened-16.svg);
+  filter: invert(1) brightness(.5) sepia(1) hue-rotate(98deg) saturate(8) brightness(0.5);
+  
+  }
+  .octicon.issue.closed {
+    background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/issue-closed-16.svg);
+  filter: invert(1) brightness(.5) sepia(1) hue-rotate(220deg) saturate(8) brightness(.65);
+  
+  }
+  .octicon.issue.wontdo {
+    background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/skip-16.svg);
+  filter: invert(1) brightness(.5) sepia(1) hue-rotate(172deg) saturate(0.43) brightness(0.65);
+  
+  }
+  .octicon.tag {
+    background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/tag-16.svg);
+  filter: invert(1) brightness(.5) sepia(1) hue-rotate(172deg) saturate(0.43) brightness(0.65);
+  
+  }
+  .octicon.commit {
+    background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/git-commit-16.svg);
+  filter: invert(1) brightness(.5) sepia(1) hue-rotate(172deg) saturate(0.43) brightness(0.65);
+  
+  }
+  .octicon.release {
+    background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/package-16.svg);
+  filter: invert(1) brightness(.5) sepia(1) hue-rotate(98deg) saturate(8) brightness(0.5);
+  
+  }
+  </style>
+  </head>
+<body>
+
+<h1>
+  
+  Activity since 2022-11-03</h1>
+
+<ul class="repos">
+  <li>
+      <p><span class="reponame"><a href="https://github.com/pyscript/pyscript">pyscript/pyscript</a></span>
+      repo issues, pull requests, and releases
+      </p>
+      
+        <ul class="entries">
+          <li class="open">
+
+              <p><a href="https://github.com/pyscript/pyscript/issues/895"><span class="octicons" title="issue"><span class="octicon dash"></span><span class="octicon dash"></span><span class="octicon issue"></span></span><b>[DISCUSSION] Behavior of &lt;py-script src=...&gt;</b> #895</a>
+              [antocuni]
+
+              
+              </p><p>The current behavior of &lt;py-script src=...&gt; is confusing and suboptimal IMHO.
+It is implemented in this way:
+
+  
+   ...</p><p class="collapse-control"><span class="collapse-control-text">Show Children</span></p>
+                <ul class="comments collapsible-content">
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/issues/895#issuecomment-1302146665" title="11-03 13:51">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>JeffersGlass</b>: You can have src if every tag has its own isolated scope. I think this should be the solution,...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/issues/895#issuecomment-1302378325" title="11-03 16:38">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>antocuni</b>: +1 on this. I think it&#39;s probably the only way we can converge. I&#39;d also suggest that, if we all...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/issues/895#issuecomment-1302512219" title="11-03 18:28">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>JeffersGlass</b>: That&#39;s what I understand, we&#39;re proposing, yeah.
+To be clear, I would still like a way for tags...</a></p>
+                      
+                    </li>
+                  </ul>
+              </li>
+          <li class="open">
+
+              <p><a href="https://github.com/pyscript/pyscript/issues/919"><span class="octicons" title="newly created; issue"><span class="octicon star"></span><span class="octicon dash"></span><span class="octicon issue"></span></span><b>Add support for sending data to webhooks</b> #919</a>
+              [temal32]
+
+              <span class="label" style="--label-r:162;--label-g:238;--label-b:239;--label-h:180;--label-s:70;--label-l:78;">type: enhancement</span>
+                <span class="label" style="--label-r:194;--label-g:224;--label-b:198;--label-h:128;--label-s:32;--label-l:81;">needs-triage</span>
+                
+              </p><p>Checklist
+
+ I added a descriptive title
+ I searched for other feature requests and couldn&#39;t find a duplicate...</p></li>
+          <li class="closed">
+
+              <p><a href="https://github.com/pyscript/pyscript/issues/918"><span class="octicons" title="newly created; newly closed; closed issue"><span class="octicon star"></span><span class="octicon check"></span><span class="octicon closed issue"></span></span><b>Using pyrebase in pyscript</b> #918</a>
+              [AggrOnline]
+
+              <span class="label" style="--label-r:192;--label-g:41;--label-b:66;--label-h:350;--label-s:64;--label-l:45;">type: bug</span>
+                <span class="label" style="--label-r:194;--label-g:224;--label-b:198;--label-h:128;--label-s:32;--label-l:81;">needs-triage</span>
+                
+              </p><p>Checklist
+
+ I added a descriptive title
+ I searched for other issues and couldn&#39;t find a solution or duplication
+ I...</p><p class="collapse-control"><span class="collapse-control-text">Show Children</span></p>
+                <ul class="comments collapsible-content">
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/issues/918#issuecomment-1303830221" title="11-04 16:20">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>marimeireles</b>: Hey @AggrOnline here&#39;s your issue: ValueError: Can&#39;t find a pure Python 3 wheel for...</a></p>
+                      
+                    </li>
+                  </ul>
+              </li>
+          <li class="open">
+
+              <p><a href="https://github.com/pyscript/pyscript/issues/857"><span class="octicons" title="issue"><span class="octicon dash"></span><span class="octicon dash"></span><span class="octicon issue"></span></span><b>Browser normalizes html tags inside &lt;py-script&gt;</b> #857</a>
+              [pbsds]
+
+              <span class="label" style="--label-r:192;--label-g:41;--label-b:66;--label-h:350;--label-s:64;--label-l:45;">type: bug</span>
+                
+              </p><p>Checklist
+
+ I added a descriptive title
+ I searched for other issues and couldn&#39;t find a solution or duplication
+ I...</p><p class="collapse-control"><span class="collapse-control-text">Show Children</span></p>
+                <ul class="comments collapsible-content">
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/issues/857#issuecomment-1303209251" title="11-04 10:09">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>marimeireles</b>: Personally I dislike the comment approach and am -1. I wonder though, it might be the best...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/issues/857#issuecomment-1303271768" title="11-04 11:04">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>antocuni</b>: I&#39;ve been looking into how to use the script tag but really have no idea how to implement it. It...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/issues/857#issuecomment-1303276651" title="11-04 11:09">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>marimeireles</b>: Yes, but keep in mind that we already analzyed pros&amp;cons in #329.
+
+I didn&#39;t know about that....</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/issues/857#issuecomment-1303348533" title="11-04 12:04">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>antocuni</b>: True, but I meant using something like class PyScript extends HTMLScriptElement { here. Does...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/issues/857#issuecomment-1303352917" title="11-04 12:06">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>marimeireles</b>: I&#39;ve been trying! 😅
+It&#39;s an interesting issue but yeah it&#39;s a hard one.
+I&#39;ll keep trying later...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/issues/857#issuecomment-1303459094" title="11-04 12:42">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>antocuni</b>: uh, I might have found &#34;something&#34;. I&#39;m undecided whether it&#39;s a brilliant solution or a...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/issues/857#issuecomment-1303839993" title="11-04 16:28">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>fpliger</b>: What&#39;s the goal?
+From the inception of the project and the &lt;py-script&gt; tag we were expecting...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/issues/857#issuecomment-1303923639" title="11-04 17:36">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>tedpatrick</b>: The problem with using a Custom Element that subclasses HTMLScriptElement is that the browser...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/issues/857#issuecomment-1304932856" title="11-07 00:00">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>antocuni</b>: What&#39;s the goal?
+
+avoid making a confusing mess that we will never be able to fix because it...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/issues/857#issuecomment-1304952842" title="11-07 00:46">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>tedpatrick</b>: We can add attributes to py-script (async,worker,scope), but we cannot do
+that to the script...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/issues/857#issuecomment-1305286264" title="11-07 08:58">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>antocuni</b>: We can add attributes to py-script (async,worker,scope), but we cannot do that to the script...</a></p>
+                      
+                    </li>
+                  </ul>
+              </li>
+          <li class="closed">
+
+              <p><a href="https://github.com/pyscript/pyscript/issues/448"><span class="octicons" title="newly closed; closed issue"><span class="octicon dash"></span><span class="octicon check"></span><span class="octicon closed issue"></span></span><b>[DOCS] Node Version Requirements in READMEs</b> #448</a>
+              [nmstoker]
+
+              <span class="label" style="--label-r:208;--label-g:203;--label-b:184;--label-h:47;--label-s:20;--label-l:76;">tag: docs</span>
+                <span class="label" style="--label-r:237;--label-g:237;--label-b:237;--label-h:0;--label-s:0;--label-l:92;">backlog</span>
+                
+              </p><p>Describe the bug
+This README page under the pyscriptjs folder does not mention the version requirements for node,...</p></li>
+          <li class="closed">
+
+              <p><a href="https://github.com/pyscript/pyscript/issues/907"><span class="octicons" title="newly closed; closed issue"><span class="octicon dash"></span><span class="octicon check"></span><span class="octicon closed issue"></span></span><b>[Discussion] Where should the dev docs live?</b> #907</a>
+              [FabioRosado]
+
+              <span class="label" style="--label-r:208;--label-g:203;--label-b:184;--label-h:47;--label-s:20;--label-l:76;">tag: docs</span>
+                
+              </p><p>Checklist
+
+ I added a descriptive title
+ I searched for other issues and couldn&#39;t find a duplication
+ I already...</p></li>
+          <li class="">
+
+              <p><a href="https://github.com/pyscript/pyscript/pull/920"><span class="octicons" title="newly created; newly merged; merged pull request"><span class="octicon star"></span><span class="octicon check"></span><span class="octicon merged pull"></span></span><b>Add development section to our docs</b> #920</a>
+              [FabioRosado]
+
+              
+              </p><p>This is the first pass at adding a development section for our docs, I&#39;ve moved setting up your env and developing...</p><p class="collapse-control"><span class="collapse-control-text">Show Children</span></p>
+                <ul class="comments collapsible-content">
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/920#pullrequestreview-1170176579" title="11-07 10:54">
+                        <span class="octicon checkcircle" title="reviewed, approved"></span>
+                          
+                        
+                        <b>antocuni</b>: LGTM</a></p>
+                      
+                        <ul class="thread_comment"><li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/920#discussion_r1015276427" title="11-07 10:54">
+                        
+                          <span class="octicon comment resolved" title="resolved comment"></span>
+                        
+                        <b>antocuni</b>: I&#39;m not really sure that it&#39;s a good idea to try to teach git in a few paragraphs:
+
+for people...</a></p>
+                      
+                        <ul class="thread_comment"><li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/920#discussion_r1015514276" title="11-07 14:48">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>FabioRosado</b>: Yeah that&#39;s a good point! when I started using Git, rebase was confusing to use that&#39;s why I...</a></p>
+                      
+                    </li>
+                  </ul>
+                      
+                    </li>
+                  </ul>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/920#issuecomment-1305785710" title="11-07 15:32">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>antocuni</b>: Perfect, thank you!
+Our &#34;merge etiquette&#34; prescribes that PR authors do the actual merge after...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/920#issuecomment-1305790264" title="11-07 15:35">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>FabioRosado</b>: Sounds good, I&#39;ll hit merge then!</a></p>
+                      
+                    </li>
+                  </ul>
+              </li>
+          <li class="open">
+
+              <p><a href="https://github.com/pyscript/pyscript/issues/891"><span class="octicons" title="issue"><span class="octicon dash"></span><span class="octicon dash"></span><span class="octicon issue"></span></span><b>[PROPOSAL] Python Plugin System</b> #891</a>
+              [fpliger]
+
+              <span class="label" style="--label-r:162;--label-g:238;--label-b:239;--label-h:180;--label-s:70;--label-l:78;">type: enhancement</span>
+                
+              </p><p>Checklist
+
+ I added a descriptive title
+ I searched for other feature requests and couldn&#39;t find a duplicate...</p><p class="collapse-control"><span class="collapse-control-text">Show Children</span></p>
+                <ul class="comments collapsible-content">
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/issues/891#issuecomment-1305822921" title="11-07 15:58">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>fpliger</b>: Ok... as I develop this I realize we didn&#39;t talk too much in details about the API for plugins...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/issues/891#issuecomment-1305865741" title="11-07 16:28">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>antocuni</b>: Ok... as I develop this I realize we didn&#39;t talk too much in details about the API for plugins...</a></p>
+                      
+                    </li>
+                  </ul>
+              </li>
+          <li class="closed">
+
+              <p><a href="https://github.com/pyscript/pyscript/issues/519"><span class="octicons" title="newly closed; closed issue"><span class="octicon dash"></span><span class="octicon check"></span><span class="octicon closed issue"></span></span><b>Add Loading of Structured Packages to Py-Config</b> #519</a>
+              [JeffersGlass]
+
+              <span class="label" style="--label-r:162;--label-g:238;--label-b:239;--label-h:180;--label-s:70;--label-l:78;">type: enhancement</span>
+                <span class="label" style="--label-r:194;--label-g:224;--label-b:198;--label-h:128;--label-s:32;--label-l:81;">needs-triage</span>
+                
+              </p><p>Checklist
+
+ I added a descriptive title
+ I searched for other feature requests and couldn&#39;t find a duplicate...</p><p class="collapse-control"><span class="collapse-control-text">Show Children</span></p>
+                <ul class="comments collapsible-content">
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/issues/519#issuecomment-1302136373" title="11-03 13:43">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>JeffersGlass</b>: Very nice @antocuni ! I think this is really excellent.
+Per your last example in the single file...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/issues/519#issuecomment-1302277110" title="11-03 15:23">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>fpliger</b>: I&#39;m aligned with @JeffersGlass on consistency here...
+
+And re: naming, if I understand right...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/issues/519#issuecomment-1302362956" title="11-03 16:27">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>antocuni</b>: Per your last example in the single file case - my two cents is that it&#39;s maybe more trouble...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/issues/519#issuecomment-1302404529" title="11-03 16:58">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>fpliger</b>: so you are proposing that to is always a folder? Works for me, but then how do you handle the...</a></p>
+                      
+                    </li>
+                  </ul>
+              </li>
+          <li class="closed">
+
+              <p><a href="https://github.com/pyscript/pyscript/issues/921"><span class="octicons" title="newly created; newly closed; closed issue"><span class="octicon star"></span><span class="octicon check"></span><span class="octicon closed issue"></span></span><b>Documentation contains references to py-env tag</b> #921</a>
+              [mdlattimore]
+
+              <span class="label" style="--label-r:112;--label-g:87;--label-b:255;--label-h:248;--label-s:100;--label-l:67;">good first issue</span>
+                <span class="label" style="--label-r:208;--label-g:203;--label-b:184;--label-h:47;--label-s:20;--label-l:76;">tag: docs</span>
+                
+              </p><p>Checklist
+
+ I added a descriptive title
+ I searched for other issues and couldn&#39;t find a duplication
+ I already...</p><p class="collapse-control"><span class="collapse-control-text">Show Children</span></p>
+                <ul class="comments collapsible-content">
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/issues/921#issuecomment-1306226812" title="11-07 21:34">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>antocuni</b>: I think that @madhur-tandon did some work on those docs recently, so he probably knows whether...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/issues/921#issuecomment-1306497958" title="11-08 01:45">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>mdlattimore</b>: If it still needs work, I have made what I think are the appropriate corrections, if that helps.</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/issues/921#issuecomment-1307078007" title="11-08 11:44">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>madhur-tandon</b>: Hi @mdlattimore It&#39;s currently being fixed in PR #914. These docs were written by an external...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/issues/921#issuecomment-1307091528" title="11-08 11:57">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>madhur-tandon</b>: Fixed in #914</a></p>
+                      
+                    </li>
+                  </ul>
+              </li>
+          <li class="">
+
+              <p><a href="https://github.com/pyscript/pyscript/pull/833"><span class="octicons" title="pull request"><span class="octicon dash"></span><span class="octicon dash"></span><span class="octicon pull"></span></span><b>Add `PyScript.__version__` and `PyScript.version_info`</b> #833</a>
+              [JeffersGlass]
+
+              
+              </p><p>Edit: See updated spec proposal below
+Addressing #546, this is a WIP to add the ability for users to check the...</p></li>
+          <li class="">
+
+              <p><a href="https://github.com/pyscript/pyscript/pull/909"><span class="octicons" title="newly merged; merged pull request"><span class="octicon dash"></span><span class="octicon check"></span><span class="octicon merged pull"></span></span><b>Create error or warning level banners and allow users to close it</b> #909</a>
+              [FabioRosado]
+
+              
+              </p><p>I&#39;ve hacked something quickly based on the discussion on #897 (comment), this PR adds a new util called...</p><p class="collapse-control"><span class="collapse-control-text">Show Children</span></p>
+                <ul class="comments collapsible-content">
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/909#pullrequestreview-1170021343" title="11-07 09:19">
+                        
+                            <span class="octicon eye" title="reviewed"></span>
+                          
+                        
+                        <b>antocuni</b>: Very good job, thank you!
+Left some minor comments but in general I&#39;m happy with it</a></p>
+                      
+                        <ul class="thread_comment"><li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/909#discussion_r1015162714" title="11-07 09:19">
+                        
+                          <span class="octicon comment resolved" title="resolved comment"></span>
+                        
+                        <b>antocuni</b>: do we still need showBanner? Again, if it&#39;s an error it should be showed, else it&#39;s not an...</a></p>
+                      
+                        <ul class="thread_comment"><li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/909#discussion_r1015355859" title="11-07 12:20">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>FabioRosado</b>: Good question, I was thinking that in the future we might need, but I am happy to remove it and...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/909#discussion_r1015392068" title="11-07 12:59">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>antocuni</b>: yes, +1 to kill code-which-we-dont-need-now.
+If it&#39;s not present, it cannot be buggy 😅</a></p>
+                      
+                    </li>
+                  </ul>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/909#discussion_r1015164517" title="11-07 09:19">
+                        
+                          <span class="octicon comment resolved" title="resolved comment"></span>
+                        
+                        <b>antocuni</b>: &#34;funny&#34;. I think that originally I put the + because I split the message on two lines.
+I don&#39;t...</a></p>
+                      
+                        <ul class="thread_comment"><li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/909#discussion_r1015357434" title="11-07 12:22">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>FabioRosado</b>: Oh I joined them because the banner was showing them on the same line 🤔 I&#39;ll add a  to split it up</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/909#discussion_r1015570501" title="11-07 15:34">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>antocuni</b>: I mean, I split them in the src code only because the line was too long and it didn&#39;t fit my...</a></p>
+                      
+                    </li>
+                  </ul>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/909#discussion_r1015165559" title="11-07 09:19">
+                        
+                          <span class="octicon comment resolved" title="resolved comment"></span>
+                        
+                        <b>antocuni</b>: woooo, a big and obscure comment deleted 🎉</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/909#discussion_r1015169051" title="11-07 09:19">
+                        
+                          <span class="octicon comment resolved" title="resolved comment"></span>
+                        
+                        <b>antocuni</b>: this is a good example of why the new approach is much better than the old one. I think that...</a></p>
+                      
+                        <ul class="thread_comment"><li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/909#discussion_r1015371379" title="11-07 12:37">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>FabioRosado</b>: That makes sense, I was wondering what we should do here, I&#39;ll raise the exception then thanks!</a></p>
+                      
+                    </li>
+                  </ul>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/909#discussion_r1015171081" title="11-07 09:19">
+                        
+                          <span class="octicon comment resolved" title="resolved comment"></span>
+                        
+                        <b>antocuni</b>: this function deserves a docstring IMHO :).
+But also, I wonder whether it should go to e.g....</a></p>
+                      
+                        <ul class="thread_comment"><li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/909#discussion_r1015372779" title="11-07 12:39">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>FabioRosado</b>: Originally I was thinking to put it in exceptions, but then wondered if it was the right place...</a></p>
+                      
+                    </li>
+                  </ul>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/909#discussion_r1015177588" title="11-07 09:19">
+                        
+                          <span class="octicon comment resolved" title="resolved comment"></span>
+                        
+                        <b>antocuni</b>: [question] neat, I didn&#39;t know you could use document from jest tests.
+I guess it&#39;s using a fake...</a></p>
+                      
+                        <ul class="thread_comment"><li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/909#discussion_r1015426702" title="11-07 13:33">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>FabioRosado</b>: I learned this recently, all my previous attempts failed when i tried to check if something was...</a></p>
+                      
+                    </li>
+                  </ul>
+                      
+                    </li>
+                  </ul>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/909#pullrequestreview-1170623373" title="11-07 15:37">
+                        <span class="octicon checkcircle" title="reviewed, approved"></span>
+                          
+                        
+                        <b>antocuni</b>: LGTM, feel free to merge!
+Thanks!</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/909#issuecomment-1305795392" title="11-07 15:40">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>FabioRosado</b>: Thanks! I need to look at the test failures that had different errors locally but I think they...</a></p>
+                      
+                    </li>
+                  </ul>
+              </li>
+          <li class="open">
+
+              <p><a href="https://github.com/pyscript/pyscript/issues/923"><span class="octicons" title="newly created; issue"><span class="octicon star"></span><span class="octicon dash"></span><span class="octicon issue"></span></span><b>Add docs for Py-Terminal once its merged</b> #923</a>
+              [FabioRosado]
+
+              <span class="label" style="--label-r:208;--label-g:203;--label-b:184;--label-h:47;--label-s:20;--label-l:76;">tag: docs</span>
+                
+              </p><p>Checklist
+
+ I added a descriptive title
+ I searched for other issues and couldn&#39;t find a duplication
+ I already...</p></li>
+          <li class="open">
+
+              <p><a href="https://github.com/pyscript/pyscript/issues/924"><span class="octicons" title="newly created; issue"><span class="octicon star"></span><span class="octicon dash"></span><span class="octicon issue"></span></span><b>Add flag to send HTML or plain Text to banner</b> #924</a>
+              [FabioRosado]
+
+              <span class="label" style="--label-r:162;--label-g:238;--label-b:239;--label-h:180;--label-s:70;--label-l:78;">type: enhancement</span>
+                <span class="label" style="--label-r:112;--label-g:87;--label-b:255;--label-h:248;--label-s:100;--label-l:67;">good first issue</span>
+                
+              </p><p>Checklist
+
+ I added a descriptive title
+ I searched for other issues and couldn&#39;t find a duplication
+ I already...</p></li>
+          <li class="">
+
+              <p><a href="https://github.com/pyscript/pyscript/pull/927"><span class="octicons" title="newly created; newly merged; merged pull request"><span class="octicon star"></span><span class="octicon check"></span><span class="octicon merged pull"></span></span><b>use user error for paths calculation</b> #927</a>
+              [madhur-tandon]
+
+              <span class="label" style="--label-r:237;--label-g:237;--label-b:237;--label-h:0;--label-s:0;--label-l:92;">sprint</span>
+                
+              </p><p>Use the new UserError paradigm by @FabioRosado</p><p class="collapse-control"><span class="collapse-control-text">Show Children</span></p>
+                <ul class="comments collapsible-content">
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/927#pullrequestreview-1172877859" title="11-08 21:42">
+                        <span class="octicon checkcircle" title="reviewed, approved"></span>
+                          
+                        
+                        <b>tedpatrick</b></a></p>
+                      
+                    </li>
+                  </ul>
+              </li>
+          <li class="">
+
+              <p><a href="https://github.com/pyscript/pyscript/pull/914"><span class="octicons" title="newly merged; merged pull request"><span class="octicon dash"></span><span class="octicon check"></span><span class="octicon merged pull"></span></span><b>implement proposal for fetching paths and retaining structure of dirs and packages</b> #914</a>
+              [madhur-tandon]
+
+              <span class="label" style="--label-r:237;--label-g:237;--label-b:237;--label-h:0;--label-s:0;--label-l:92;">sprint</span>
+                
+              </p><p>Closes #519 and #921
+Proposal here: #519 (comment)
+TODO:
+
+  Update docs</p><p class="collapse-control"><span class="collapse-control-text">Show Children</span></p>
+                <ul class="comments collapsible-content">
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/914#pullrequestreview-1169959235" title="11-07 08:48">
+                        <span class="octicon filediff" title="reviewed, changes requested"></span>
+                          
+                        
+                        <b>antocuni</b>: Good job, apart a couple of notes.
+But, it completely misses integration tests which should to...</a></p>
+                      
+                        <ul class="thread_comment"><li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/914#discussion_r1015118869" title="11-07 08:48">
+                        
+                          <span class="octicon comment resolved" title="resolved comment"></span>
+                        
+                        <b>antocuni</b>: [suggestion] This example has the purpose of showing that you can use both src and inline...</a></p>
+                      
+                        <ul class="thread_comment"><li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/914#discussion_r1015735617" title="11-07 17:58">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>madhur-tandon</b>: done, using packages</a></p>
+                      
+                    </li>
+                  </ul>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/914#discussion_r1015122222" title="11-07 08:48">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>antocuni</b>: I think it&#39;s fine for this PR, but we should have better docs to explain how this...</a></p>
+                      
+                        <ul class="thread_comment"><li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/914#discussion_r1015155103" title="11-07 08:57">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>madhur-tandon</b>: I guess you cannot see an entry for to_file here as well since I think you reviewed a previous commit.</a></p>
+                      
+                    </li>
+                  </ul>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/914#discussion_r1015124503" title="11-07 08:48">
+                        
+                          <span class="octicon comment resolved" title="resolved comment"></span>
+                        
+                        <b>antocuni</b>: why did yoy put this code into utils.ts?
+It&#39;s specifically for py-config, it should go into pyconfig.ts.</a></p>
+                      
+                        <ul class="thread_comment"><li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/914#discussion_r1015739028" title="11-07 18:02">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>madhur-tandon</b>: put it in plugins/fetch.ts as discussed on slack</a></p>
+                      
+                    </li>
+                  </ul>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/914#discussion_r1015125893" title="11-07 08:48">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>antocuni</b>: [question] just my curiosity but: what is the advantage of using forEach instead of a normal for...</a></p>
+                      
+                        <ul class="thread_comment"><li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/914#discussion_r1015816707" title="11-07 19:26">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>madhur-tandon</b>: I don&#39;t know to be honest except that it is considered a standard practice I guess? If not, I...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/914#discussion_r1015910622" title="11-07 21:19">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>antocuni</b>: I don&#39;t really know because I&#39;m not an expert of JS/TS.
+In all the rest of the code we use...</a></p>
+                      
+                    </li>
+                  </ul>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/914#discussion_r1015127595" title="11-07 08:48">
+                        
+                          <span class="octicon comment resolved" title="resolved comment"></span>
+                        
+                        <b>antocuni</b>: this is missing support for to_file as described here: #519 (comment)</a></p>
+                      
+                        <ul class="thread_comment"><li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/914#discussion_r1015152311" title="11-07 08:54">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>madhur-tandon</b>: @antocuni I think you reviewed a previous commit. I already added support for to_file. Not sure...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/914#discussion_r1015775100" title="11-07 18:40">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>madhur-tandon</b>: resolving...</a></p>
+                      
+                    </li>
+                  </ul>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/914#discussion_r1015138277" title="11-07 08:48">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>antocuni</b>: I have no idea what this line does :). Sure, I could probably spend 5 minutes trying to...</a></p>
+                      
+                        <ul class="thread_comment"><li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/914#discussion_r1015774880" title="11-07 18:40">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>madhur-tandon</b>: done, added testing, the part about filter(it =&gt; it !== &#34;&#34;) is needed since the behaviour...</a></p>
+                      
+                    </li>
+                  </ul>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/914#discussion_r1015139368" title="11-07 08:48">
+                        
+                          <span class="octicon comment resolved" title="resolved comment"></span>
+                        
+                        <b>antocuni</b>: oh, and this is the 3rd time you copy&amp;pasted the code. One more reason to make it a standalone function</a></p>
+                      
+                        <ul class="thread_comment"><li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/914#discussion_r1015771850" title="11-07 18:36">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>madhur-tandon</b>: done</a></p>
+                      
+                    </li>
+                  </ul>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/914#discussion_r1015140456" title="11-07 08:48">
+                        
+                          <span class="octicon comment resolved" title="resolved comment"></span>
+                        
+                        <b>antocuni</b>: small note: if PR #909 gets merged before this one, this shoud become throw UserError.</a></p>
+                      
+                        <ul class="thread_comment"><li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/914#discussion_r1017148993" title="11-08 21:51">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>madhur-tandon</b>: Done in #927</a></p>
+                      
+                    </li>
+                  </ul>
+                      
+                    </li>
+                  </ul>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/914#issuecomment-1306082962" title="11-07 19:25">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>madhur-tandon</b>: @antocuni For the integration tests, they were present in test_01_basic.py, I have moved it to...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/914#issuecomment-1306209959" title="11-07 21:21">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>antocuni</b>: I am not sure if we should write tests using a custom URL (eg: http://example.com/data.csv) --...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/914#pullrequestreview-1171117294" title="11-07 21:32">
+                        <span class="octicon checkcircle" title="reviewed, approved"></span>
+                          
+                        
+                        <b>antocuni</b>: good job 💪
+I&#39;m approving it in advance so that you can merge it without any further review from...</a></p>
+                      
+                        <ul class="thread_comment"><li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/914#discussion_r1015915722" title="11-07 21:32">
+                        
+                          <span class="octicon comment resolved" title="resolved comment"></span>
+                        
+                        <b>antocuni</b>: this looks wrong.
+If I do jointPaths(&#34;/tmp&#34;, &#34;foo.txt&#34;) I expect /tmp/foo.txt, not tmp/foo.txt</a></p>
+                      
+                        <ul class="thread_comment"><li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/914#discussion_r1016504894" title="11-08 11:40">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>madhur-tandon</b>: Done, I only check for a leading slash on the first element though. Otherwise it will be very cumbersome.</a></p>
+                      
+                    </li>
+                  </ul>
+                      
+                    </li>
+                  </ul>
+                      
+                    </li>
+                  </ul>
+              </li>
+          <li class="closed">
+
+              <p><a href="https://github.com/pyscript/pyscript/issues/925"><span class="octicons" title="newly created; newly closed; closed issue"><span class="octicon star"></span><span class="octicon check"></span><span class="octicon closed issue"></span></span><b>[[Fetch]] from: should not escape &#39;&amp;&#39; in URLs</b> #925</a>
+              [JeffersGlass]
+
+              <span class="label" style="--label-r:192;--label-g:41;--label-b:66;--label-h:350;--label-s:64;--label-l:45;">type: bug</span>
+                
+              </p><p>Checklist
+
+ I added a descriptive title
+ I searched for other issues and couldn&#39;t find a solution or duplication
+ I...</p><p class="collapse-control"><span class="collapse-control-text">Show Children</span></p>
+                <ul class="comments collapsible-content">
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/issues/925#issuecomment-1307793783" title="11-08 20:34">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>antocuni</b>: we probably need to call htmlDecode on it, as we do for &lt;py-script&gt;:
+
+  
+    
+     ...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/issues/925#issuecomment-1307840698" title="11-08 21:20">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>madhur-tandon</b>: Thanks @antocuni, I have opened a PR fixing this.
+@JeffersGlass I have checked the fix from my...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/issues/925#issuecomment-1307989253" title="11-08 23:47">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>JeffersGlass</b>: Thanks for the swift PR all!</a></p>
+                      
+                    </li>
+                  </ul>
+              </li>
+          <li class="">
+
+              <p><a href="https://github.com/pyscript/pyscript/pull/926"><span class="octicons" title="newly created; newly merged; merged pull request"><span class="octicon star"></span><span class="octicon check"></span><span class="octicon merged pull"></span></span><b>decode innerhtml for pyconfig</b> #926</a>
+              [madhur-tandon]
+
+              <span class="label" style="--label-r:237;--label-g:237;--label-b:237;--label-h:0;--label-s:0;--label-l:92;">sprint</span>
+                
+              </p><p>Fixes #925</p><p class="collapse-control"><span class="collapse-control-text">Show Children</span></p>
+                <ul class="comments collapsible-content">
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/926#pullrequestreview-1172855696" title="11-08 21:22">
+                        <span class="octicon checkcircle" title="reviewed, approved"></span>
+                          
+                        
+                        <b>FabioRosado</b></a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/926#issuecomment-1307852786" title="11-08 21:30">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>madhur-tandon</b>: Thanks @FabioRosado.</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/926#issuecomment-1307958838" title="11-08 23:08">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>antocuni</b>: this is definitely missing a test 😢</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/926#issuecomment-1308283380" title="11-09 06:41">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>madhur-tandon</b>: this is definitely missing a test 😢
+
+Added here: #929</a></p>
+                      
+                    </li>
+                  </ul>
+              </li>
+          <li class="">
+
+              <p><a href="https://github.com/pyscript/pyscript/pull/929"><span class="octicons" title="newly created; newly merged; merged pull request"><span class="octicon star"></span><span class="octicon check"></span><span class="octicon merged pull"></span></span><b>add test for not escaping characters in pyconfig</b> #929</a>
+              [madhur-tandon]
+
+              <span class="label" style="--label-r:237;--label-g:237;--label-b:237;--label-h:0;--label-s:0;--label-l:92;">sprint</span>
+                
+              </p><p class="collapse-control"><span class="collapse-control-text">Show Children</span></p>
+                <ul class="comments collapsible-content">
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/929#pullrequestreview-1173381576" title="11-09 06:47">
+                        <span class="octicon checkcircle" title="reviewed, approved"></span>
+                          
+                        
+                        <b>tedpatrick</b></a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/929#issuecomment-1308288205" title="11-09 06:49">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>madhur-tandon</b>: Thanks @tedpatrick</a></p>
+                      
+                    </li>
+                  </ul>
+              </li>
+          <li class="">
+
+              <p><a href="https://github.com/pyscript/pyscript/pull/917"><span class="octicons" title="newly created; newly merged; merged pull request"><span class="octicon star"></span><span class="octicon check"></span><span class="octicon merged pull"></span></span><b>Introduce a Plugin system, implement &lt;py-terminal&gt; as a plugin</b> #917</a>
+              [antocuni]
+
+              
+              </p><p>This PR does two things:
+
+introduce the first minimal version of a Plugin system. Plugins are subclasses of the...</p><p class="collapse-control"><span class="collapse-control-text">Show Children</span></p>
+                <ul class="comments collapsible-content">
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/917#pullrequestreview-1172590862" title="11-08 17:55">
+                        <span class="octicon checkcircle" title="reviewed, approved"></span>
+                          
+                        
+                        <b>FabioRosado</b>: Just had the smallest of comments but this looks good!
+I&#39;ll open an issue so I dont forget to...</a></p>
+                      
+                        <ul class="thread_comment"><li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/917#discussion_r1016946335" title="11-08 17:55">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>FabioRosado</b>: Just a nit, but would be nice to have a more discriptive name although the code is small enough...</a></p>
+                      
+                        <ul class="thread_comment"><li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/917#discussion_r1017838579" title="11-09 11:53">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>antocuni</b>: I&#39;m following this rule here. The point is precisely that the code is short, and having a longer...</a></p>
+                      
+                    </li>
+                  </ul>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/917#discussion_r1016949144" title="11-08 17:55">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>FabioRosado</b>: Do we need to add typing here or does TS knows msg will be string?</a></p>
+                      
+                        <ul class="thread_comment"><li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/917#discussion_r1017842650" title="11-09 11:57">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>antocuni</b>: Uhm, good question, I don&#39;t really know.
+I tried to compile with --strict and the compiler...</a></p>
+                      
+                    </li>
+                  </ul>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/917#discussion_r1016950248" title="11-08 17:55">
+                        
+                          <span class="octicon comment resolved" title="resolved comment"></span>
+                        
+                        <b>FabioRosado</b>: +1 on this 😄</a></p>
+                      
+                    </li>
+                  </ul>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/917#issuecomment-1308652730" title="11-09 12:06">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>antocuni</b>: @FabioRosado I think this is ready to be merged, but I&#39;ll let you decide about the naming of t :)</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/917#issuecomment-1308659705" title="11-09 12:11">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>FabioRosado</b>: I think it&#39;s okay like you said the code is small enough that it doesn&#39;t affect understanding of...</a></p>
+                      
+                    </li>
+                  </ul>
+              </li>
+          <li class="">
+
+              <p><a href="https://github.com/pyscript/pyscript/pull/930"><span class="octicons" title="newly created; newly merged; merged pull request"><span class="octicon star"></span><span class="octicon check"></span><span class="octicon merged pull"></span></span><b>Fix banner width</b> #930</a>
+              [FabioRosado]
+
+              
+              </p><p>@JeffersGlass  noticed that the border of the banner cut off on the right side. I&#39;ve tested this and seems like...</p><p class="collapse-control"><span class="collapse-control-text">Show Children</span></p>
+                <ul class="comments collapsible-content">
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/930#issuecomment-1308913325" title="11-09 15:13">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>madhur-tandon</b>: @FabioRosado could you perhaps post a screenshot?</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/930#issuecomment-1309002310" title="11-09 16:15">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>JeffersGlass</b>: LGTM</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/930#pullrequestreview-1174355282" title="11-09 16:15">
+                        <span class="octicon checkcircle" title="reviewed, approved"></span>
+                          
+                        
+                        <b>JeffersGlass</b></a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/930#issuecomment-1309037142" title="11-09 16:42">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>FabioRosado</b>: Thank you Jeff and thank you for the screenshot I forgot to add those 😬</a></p>
+                      
+                    </li>
+                  </ul>
+              </li>
+          <li class="">
+
+              <p><a href="https://github.com/pyscript/pyscript/pull/715"><span class="octicons" title="newly closed; closed pull request"><span class="octicon dash"></span><span class="octicon x"></span><span class="octicon closed pull"></span></span><b>Improve Detection of Scripts that Require Top-Level Await</b> #715</a>
+              [JeffersGlass]
+
+              <span class="label" style="--label-r:10;--label-g:21;--label-b:174;--label-h:235;--label-s:89;--label-l:36;">status: superseded</span>
+                
+              </p><p>Issue
+As noted in #714, testing whether a script needs to run with top-level-await enabled by looking for &#39;asyncio&#39;...</p><p class="collapse-control"><span class="collapse-control-text">Show Children</span></p>
+                <ul class="comments collapsible-content">
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/715#issuecomment-1308177040" title="11-09 03:58">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>JeffersGlass</b>: The code in this PR has been folded into #928 - with the deprecation of Implicit Coroutine...</a></p>
+                      
+                    </li>
+                  </ul>
+              </li>
+          <li class="open">
+
+              <p><a href="https://github.com/pyscript/pyscript/issues/932"><span class="octicons" title="newly created; issue"><span class="octicon star"></span><span class="octicon dash"></span><span class="octicon issue"></span></span><b>target_id is overwritten when id is specified by the user</b> #932</a>
+              [marimeireles]
+
+              <span class="label" style="--label-r:192;--label-g:41;--label-b:66;--label-h:350;--label-s:64;--label-l:45;">type: bug</span>
+                
+              </p><p>Checklist
+
+ I added a descriptive title
+ I searched for other issues and couldn&#39;t find a solution or duplication
+ I...</p><p class="collapse-control"><span class="collapse-control-text">Show Children</span></p>
+                <ul class="comments collapsible-content">
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/issues/932#issuecomment-1309269128" title="11-09 19:42">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>antocuni</b>: I think this is a duplicate of #878</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/issues/932#issuecomment-1309336201" title="11-09 20:25">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>JeffersGlass</b>: You&#39;re right that (at least part of) the problem relates to awaiting the evaluation of the...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/issues/932#issuecomment-1309522199" title="11-09 23:18">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>antocuni</b>: So coroutines will need to use display(..., target=...). Which I can live with, and I think is...</a></p>
+                      
+                    </li>
+                  </ul>
+              </li>
+          <li class="">
+
+              <p><a href="https://github.com/pyscript/pyscript/pull/931"><span class="octicons" title="newly created; pull request"><span class="octicon star"></span><span class="octicon dash"></span><span class="octicon pull"></span></span><b>Deprecate py-button, py-inputbox, py-box and py-title</b> #931</a>
+              [FabioRosado]
+
+              
+              </p><p>This PR adds a deprecated banner to any of these elements, updates the examples and docs.
+For one of the examples we...</p><p class="collapse-control"><span class="collapse-control-text">Show Children</span></p>
+                <ul class="comments collapsible-content">
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/931#issuecomment-1309346608" title="11-09 20:37">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>JeffersGlass</b>: If you wanted, you could also add a note under the &#34;Visual Component Tags&#34; header that all of...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/931#issuecomment-1309366438" title="11-09 20:58">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>FabioRosado</b>: Thanks that&#39;s a great idea! I&#39;ll push a commit to add the note and also mention the warning...</a></p>
+                      
+                    </li>
+                  </ul>
+              </li>
+          <li class="">
+
+              <p><a href="https://github.com/pyscript/pyscript/pull/936"><span class="octicons" title="newly created; newly merged; merged pull request"><span class="octicon star"></span><span class="octicon check"></span><span class="octicon merged pull"></span></span><b>Make HTTP cache persisten across sessions</b> #936</a>
+              [antocuni]
+
+              
+              </p><p>This allows to run tests offline (if the cache is already populated), and to make them much faster if you are on a...</p><p class="collapse-control"><span class="collapse-control-text">Show Children</span></p>
+                <ul class="comments collapsible-content">
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/936#issuecomment-1310220704" title="11-10 12:38">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>philippjfr</b>: Obviously this isn&#39;t a priority but it might be nice to eventually move some of this machinery...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/936#pullrequestreview-1175700738" title="11-10 12:40">
+                        <span class="octicon checkcircle" title="reviewed, approved"></span>
+                          
+                        
+                        <b>tedpatrick</b></a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/936#issuecomment-1310323417" title="11-10 14:01">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>antocuni</b>: Obviously this isn&#39;t a priority but it might be nice to eventually move some of this machinery...</a></p>
+                      
+                    </li>
+                  </ul>
+              </li>
+          <li class="closed">
+
+              <p><a href="https://github.com/pyscript/pyscript/issues/934"><span class="octicons" title="newly created; newly closed; closed issue"><span class="octicon star"></span><span class="octicon check"></span><span class="octicon closed issue"></span></span><b>Error banner now shown if we fail to fetch path with a live server</b> #934</a>
+              [FabioRosado]
+
+              <span class="label" style="--label-r:194;--label-g:224;--label-b:198;--label-h:128;--label-s:32;--label-l:81;">needs-triage</span>
+                
+              </p><p>Checklist
+
+ I added a descriptive title
+ I searched for other issues and couldn&#39;t find a duplication
+ I already...</p><p class="collapse-control"><span class="collapse-control-text">Show Children</span></p>
+                <ul class="comments collapsible-content">
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/issues/934#issuecomment-1309340656" title="11-09 20:30">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>antocuni</b>: Nice finding!
+But now I also would like to understand why it works without --dev, it might...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/issues/934#issuecomment-1309353220" title="11-09 20:47">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>FabioRosado</b>: That&#39;s a good point! I wonder if the test is just a bit wrong? I&#39;m assuming that maybe fetch...</a></p>
+                      
+                    </li>
+                  </ul>
+              </li>
+          <li class="">
+
+              <p><a href="https://github.com/pyscript/pyscript/pull/935"><span class="octicons" title="newly created; newly merged; merged pull request"><span class="octicon star"></span><span class="octicon check"></span><span class="octicon merged pull"></span></span><b>Raise error if we get a non 200 status from fetch</b> #935</a>
+              [FabioRosado]
+
+              
+              </p><p>This PR adds a check to the status code of fetch and if we get any non 200 then we throw an error.
+This was a bit of...</p><p class="collapse-control"><span class="collapse-control-text">Show Children</span></p>
+                <ul class="comments collapsible-content">
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/935#issuecomment-1309363848" title="11-09 20:55">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>FabioRosado</b>: Nice pre-commit hook! The local env in my personal laptop is messed up, will fix tomorrow</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/935#discussion_r1018503264" title="11-09 23:17">
+                        
+                            <span class="octicon eye" title="reviewed"></span>
+                          
+                        
+                        <b>antocuni</b>: uhm, maybe we could raise some custom subclass of Error here?
+This way, we could do a more...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/935#issuecomment-1310306040" title="11-10 13:47">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>FabioRosado</b>: I really dislike the double check for TypeError so the test passes but looking at the code and...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/935#issuecomment-1310337982" title="11-10 14:12">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>antocuni</b>: I really dislike the double check for TypeError so the test passes but looking at the code and...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/935#pullrequestreview-1175856796" title="11-10 14:13">
+                        <span class="octicon checkcircle" title="reviewed, approved"></span>
+                          
+                        
+                        <b>antocuni</b></a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/935#issuecomment-1310423180" title="11-10 15:00">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>FabioRosado</b>: Oh! Today I learned ha
+Thanks that makes sense! So the assertion might be okay</a></p>
+                      
+                    </li>
+                  </ul>
+              </li>
+          <li class="">
+
+              <p><a href="https://github.com/pyscript/pyscript/pull/933"><span class="octicons" title="newly created; pull request"><span class="octicon star"></span><span class="octicon dash"></span><span class="octicon pull"></span></span><b>Add basic docs for py-terminal</b> #933</a>
+              [FabioRosado]
+
+              
+              </p><p>This PR adds a very basic entry on py-terminal and a new section in Reference for plugins.
+@antocuni  Is there...</p><p class="collapse-control"><span class="collapse-control-text">Show Children</span></p>
+                <ul class="comments collapsible-content">
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/933#pullrequestreview-1175842256" title="11-10 14:09">
+                        
+                            <span class="octicon eye" title="reviewed"></span>
+                          
+                        
+                        <b>antocuni</b>: Thanks! Left some suggestions</a></p>
+                      
+                        <ul class="thread_comment"><li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/933#discussion_r1019173280" title="11-10 14:09">
+                        
+                          <span class="octicon comment resolved" title="resolved comment"></span>
+                        
+                        <b>antocuni</b>: Suggested change
+        
+          
+    
+
+        
+      
+    
+    
+      
+          
+         ...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/933#discussion_r1019175298" title="11-10 14:09">
+                        
+                          <span class="octicon comment resolved" title="resolved comment"></span>
+                        
+                        <b>antocuni</b>: Suggested change
+        
+          
+    
+
+        
+      
+    
+    
+      
+          
+         ...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/933#discussion_r1019176007" title="11-10 14:09">
+                        
+                          <span class="octicon comment resolved" title="resolved comment"></span>
+                        
+                        <b>antocuni</b>: Suggested change
+        
+          
+    
+
+        
+      
+    
+    
+      
+          
+         ...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/933#discussion_r1019177844" title="11-10 14:09">
+                        
+                          <span class="octicon comment resolved" title="resolved comment"></span>
+                        
+                        <b>antocuni</b>: Suggested change
+        
+          
+    
+
+        
+      
+    
+    
+      
+          
+         ...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/933#discussion_r1019179284" title="11-10 14:09">
+                        
+                          <span class="octicon comment resolved" title="resolved comment"></span>
+                        
+                        <b>antocuni</b>: I would also add a note which explains that you can place a &lt;py-terminal&gt; manually (and you can...</a></p>
+                      
+                    </li>
+                  </ul>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/933#issuecomment-1310473179" title="11-10 15:35">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>FabioRosado</b>: I am not sure if Github allows you to batch multiple suggestions and add them in a single commit...</a></p>
+                      
+                    </li>
+                  </ul>
+              </li>
+          <li class="">
+
+              <p><a href="https://github.com/pyscript/pyscript/pull/928"><span class="octicons" title="newly created; draft pull request"><span class="octicon star"></span><span class="octicon dash"></span><span class="octicon draft pull"></span></span><b>WIP: Remove &#39;Implicit Async&#39;, Don&#39;t Await `runtime.run()`</b> #928</a>
+              [JeffersGlass]
+
+              <span class="label" style="--label-r:199;--label-g:234;--label-b:209;--label-h:137;--label-s:45;--label-l:84;">status: WIP</span>
+                
+              </p><p>This removes the ability to write &#34;implicitly scheduled coroutine&#34; code in &lt;py-script&gt; tags, and requires users to...</p><p class="collapse-control"><span class="collapse-control-text">Show Children</span></p>
+                <ul class="comments collapsible-content">
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/928#issuecomment-1308626589" title="11-09 11:43">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>antocuni</b>: woooo 🎉🎉🎉</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pyscript/pyscript/pull/928#issuecomment-1309184271" title="11-09 18:23">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>JeffersGlass</b>: Interesting error in test_py_config: &#34;DeprecationWarning: There is no current event loop&#39;&#34; shows...</a></p>
+                      
+                    </li>
+                  </ul>
+              </li>
+          </ul>
+      
+    </li>
+  </ul>
+
+<p class="footer">
+  created at 2022-11-10 11:22 by
+  <a href="https://pypi.org/project/dinghy/0.15.0">
+    dinghy
+    <span class="dinghy_version">0.15.0</span></a>.
+</p>
+<script>
+  var controls = document.getElementsByClassName("collapse-control");
+  var i;
+
+  for (i = 0; i < controls.length; i++) {
+    controls[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  } 
+</script>

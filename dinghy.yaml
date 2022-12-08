@@ -1,7 +1,6 @@
-    digests:
-      - digest: PyScript2022-12-01.html
-        title: PyScript 2022.12.1 Updates
-        since: 67 days
-        #since: 1 day
-        items:
-          - https://github.com/pyscript/pyscript
+digests:
+  - digest: since2022091.html
+    title: Activity Since 2022.09.1 Release
+    since: 2d #69d
+    items:
+      - https://github.com/pyscript/pyscript
